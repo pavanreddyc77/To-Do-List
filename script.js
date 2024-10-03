@@ -6,17 +6,21 @@ document.getElementById('addButton')
        const List = document.getElementById('List');
        const li = document.createElement('li');
        const checkbox = document.createElement('input');
+            
        checkbox.type = 'checkbox';
        checkbox.addEventListener('change', function() {
            li.classList.toggle('completed', this.checked);
        });
+            
        const taskText = document.createTextNode(taskValue);
+            
        const deleteButton = document.createElement('button');
        deleteButton.textContent = 'Delete';
        deleteButton.className = 'deleteButton';
        deleteButton.addEventListener('click', function() {
            List.removeChild(li);
        });
+            
        li.appendChild(checkbox);
        li.appendChild(taskText);
        li.appendChild(deleteButton);
